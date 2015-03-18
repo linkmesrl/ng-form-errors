@@ -6,7 +6,7 @@ angular.module('errorMessageModule', []).directive('errorMessage', [
 
         return {
             restrict: 'E',
-            templateUrl: 'components/error/error.tpl.html',
+            templateUrl: 'components/thug_life/error/error.tpl.html',
             scope: {
                 field:'=field',
                 invalidMessage:'@invalidMessage',
