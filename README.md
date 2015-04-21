@@ -28,16 +28,16 @@
 
 * server-error: variable in scope containing server errors, it must be structured like:
 
+```
     {
         messages : {
 
                 <field_name_1> : <error_text_1>,
                 <field_name_2> : <error_text_2>,
-
-                ...
+                
             }
     }
-
+```
 
 * field: the form control name whose errors should be displayed
 
