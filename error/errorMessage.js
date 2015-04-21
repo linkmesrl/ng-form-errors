@@ -6,15 +6,22 @@ angular.module('errorMessageModule', []).directive('errorMessage', [
 
         return {
             restrict: 'E',
-            templateUrl: 'components/thug_life/error/error.tpl.html',
+            template: '<div ng-include="contentUrl()"></div>',
             scope: {
                 field:'=field',
                 invalidMessage:'@invalidMessage',
                 errorMsgs: '=errorMsgs',
-                serverError:'=serverError'
+                serverError:'=serverError',
+                templateUrl: '@templateUrl'
             },
 
             link: function postLink(scope) {
+
+                console.log(scope);
+
+                scope.contentUrl = function(){
+                    return scope.templateUrl;
+                };
 
                 var defaultMsg = 'Campo non valido';
 
