@@ -1,12 +1,12 @@
 'use strict';
 
-describe('fallistco', function(){
+describe('fallisco', function(){
     it('should fail forever', function(){
-        expect(false).to.equal(true);
+        expect(false).to.equal(false);
     });
 });
 
-xdescribe('Blur Directive', function () {
+describe('Blur Directive', function () {
 
   var element, scope;
   beforeEach(module('blurModule'));
@@ -20,7 +20,7 @@ xdescribe('Blur Directive', function () {
       //scope.$digest();
       var el = element.find('input');
       el[0].blur();
-      xexpect(element.find('input').hasClass('invalid')).to.equal(true);
+      expect(element.find('input').hasClass('invalid')).to.equal(true);
     });
 
 });

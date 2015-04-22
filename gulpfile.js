@@ -1,23 +1,33 @@
 'use strict';
-var gulp = require('gulp');
-var karma = require('gulp-karma');
- 
-var testFiles = [
-    'client/todo.js',
-    'client/todo.util.js',
-    'client/todo.App.js',
-    'test/client/*.js'
-];
 
-gulp.task('test', function() {
-    // Be sure to return the stream 
-    return gulp.src(testFiles)
-    .pipe(karma({
-        configFile: 'karma.conf.js',
-        action: 'run'
-    }))
-    .on('error', function(err) {
-        // Make sure failed tests cause gulp to exit non-zero 
-        throw err;
-    });
+var gulp = require('gulp'),
+    connect = require('gulp-connect'),
+    karma = require('karma').server,
+    protractor = require("gulp-protractor").protractor;
+
+
+gulp.task('connect', function () {
+  connect.server({
+    root: 'app/',
+    port: 8888
+  });
 });
+
+gulp.task('unit', function (done) {
+  karma.start({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done);
+});
+
+gulp.task('e2e', function(done) {
+  var args = ['--baseUrl', 'http://127.0.0.1:8888'];
+  gulp.src(["./tests/e2e/*.js"])
+    .pipe(protractor({
+      configFile: "tests/protractor.conf.js",
+      args: args
+    }))
+    .on('error', function(e) { throw e; });
+});
+
+gulp.task('default', ['connect']);
