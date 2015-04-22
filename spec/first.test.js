@@ -1,26 +1,24 @@
 'use strict';
 
-describe('fallisco', function(){
-    it('should fail forever', function(){
-        expect(false).to.equal(false);
-    });
-});
-
 describe('Blur Directive', function () {
 
   var element, scope;
   beforeEach(module('blurModule'));
   beforeEach(inject(function ($compile, $rootScope) {
       scope = $rootScope.$new();
-      element = $compile('<form><input blur type="number" ng-model="model"></input></form>')(scope);
+      element = $compile('<form><input blur type="number" ng-model="model"/></form>')(scope);
     }));
 
   it('should add a class on blur with invlaid type', function () {
-      scope.model = 'ciao';
-      //scope.$digest();
+      //scope.model = 'ciao';
+
       var el = element.find('input');
+      el.val('ciao');
+      scope.$digest();
+      el[0].focus();
       el[0].blur();
-      expect(element.find('input').hasClass('invalid')).to.equal(true);
+      console.log(element.find('input'));
+      //expect(element.find('input').hasClass('invalid')).to.equal(true);
     });
 
 });
