@@ -2,7 +2,7 @@
 
 describe('fallistco', function(){
     it('should fail forever', function(){
-        expect(false).to.be(true);
+        expect(false).to.equal(true);
     });
 });
 
@@ -20,7 +20,7 @@ xdescribe('Blur Directive', function () {
       //scope.$digest();
       var el = element.find('input');
       el[0].blur();
-      xexpect(element.find('input').hasClass('invalid')).to.be(true);
+      xexpect(element.find('input').hasClass('invalid')).to.equal(true);
     });
 
 });
