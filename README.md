@@ -21,7 +21,7 @@ Inject into your main module the two modules:
             <form name="emailform" action="">
                 ...
                 <label class="item item-input">
-                    <span class="input-label" translate>Nuova email</span>
+                    <span class="input-labe>Nuova email</span>
                     <input type="email"  ng-model="newEmail" name="newEmail" blur required>
                 </label>
                 <error-message server-error="serverError" field="emailform.newEmail" invalid-message="mail non corretta" template-url="js/vendor/error/error.tpl.html"></error-message>
@@ -41,7 +41,7 @@ In this example error.tpl.html looks like that:
 <p class="messageError" ng-repeat="message in serverError.messages[field.$name]" ng-class="{
     in: field.$showErr && serverError.messages[field.$name]}">
     <span class="fa fa-info-circle"></span>
-    {{message | translate }}
+    {{message }}
 </p>
 ```
 
