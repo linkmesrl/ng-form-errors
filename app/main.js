@@ -22,4 +22,8 @@ angular.module('validationErrorsDemo',[
     $scope.showErr = function(){
         $scope.errors = sampleErrors;
     };
+
+    $scope.clearErr = function(){
+        delete $scope.errors;
+    };
 });
