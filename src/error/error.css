@@ -1,28 +1,37 @@
-/*TODO inserire animazioni*/
-.messageError {
-    margin:0;
-    width:100%;
-    height:50px;
-    line-height:50px;
-    background-color:#FCC9C0;
-    color:red;
-    font-weight:bold;
-    font-size:12px;
-    margin-top:10px;
-    display:none;
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.messageError.in {
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.validationErrors.in {
     animation: fadeInDown 0.5s;
     display:inline-block;
 }
 
-.messageError.out {
+.validationErrors.out {
     animation: fadeOutDown 0.5s;
     display:none;
 }
 
-.messageError.fa, span.fa {
+.validationErrors.fa, span.fa {
     font-size:24px;
     line-height:48px;
     border:none;
