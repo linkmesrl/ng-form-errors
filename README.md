@@ -17,7 +17,7 @@ Inject into your main module the module:
 
 ```javascript
 angular.module('app',[
-    'validationErrors'
+    'ngFormErrors'
 ])
 ```
 

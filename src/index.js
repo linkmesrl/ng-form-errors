@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('validationErrors', [])
-.provider('validationErrors', function() {
+angular.module('ngFormErrors', [])
+.provider('ngFormErrors', function() {
 
     this.template = '';
 

@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('validationErrorsDemo',[
-    'validationErrors'
+    'ngFormErrors'
 ])
-.config(function(validationErrorsProvider){
-    validationErrorsProvider.template = 'error.tpl.html';
+.config(function(ngFormErrorsProvider){
+    ngFormErrorsProvider.template = 'error.tpl.html';
 })
 .controller('FormCtrl', function($scope){
     var sampleErrors = {

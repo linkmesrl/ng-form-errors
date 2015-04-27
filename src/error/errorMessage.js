@@ -1,12 +1,12 @@
 'use strict';
 
-angular.module('validationErrors')
-.directive('errorMessage', function(validationErrors) {
+angular.module('ngFormErrors')
+.directive('errorMessage', function(ngFormErrors) {
 
 
         return {
             restrict: 'E',
-            templateUrl: validationErrors.template || 'error.tpl.html',
+            templateUrl: ngFormErrors.template || 'error.tpl.html',
             scope: {
                 field:'=field',
                 invalidMessage:'@invalidMessage',
