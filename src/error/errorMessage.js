@@ -1,27 +1,20 @@
-angular.module('errorMessageModule', []).directive('errorMessage', [
+'use strict';
 
-    function() {
+angular.module('validationErrors')
+.directive('errorMessage', function(validationErrors) {
 
-        'use strict';
 
         return {
             restrict: 'E',
-            template: '<div ng-include="contentUrl()"></div>',
+            templateUrl: validationErrors.template || 'error.tpl.html',
             scope: {
                 field:'=field',
                 invalidMessage:'@invalidMessage',
                 errorMsgs: '=errorMsgs',
                 serverError:'=serverError',
-                templateUrl: '@templateUrl'
             },
 
             link: function postLink(scope) {
-
-                console.log(scope);
-
-                scope.contentUrl = function(){
-                    return scope.templateUrl;
-                };
 
                 var defaultMsg = 'Campo non valido';
 
@@ -57,5 +50,4 @@ angular.module('errorMessageModule', []).directive('errorMessage', [
 
             }
         };
-    }
-]);
+    });

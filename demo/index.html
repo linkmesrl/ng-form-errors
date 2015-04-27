@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>validationErrorsDemo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/ng-form-errors/src/blur/blur.css">
+</head>
+<body data-ng-app="validationErrorsDemo">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1>Validation errors!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <form>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input class="form-control" type="email" ng-model="email" placeholder="email" blur>
+                    <error-message server-error="errors" field="emailform.newEmail" invalid-message="mail non corretta"></error-message> 
+                </div>
+                <div class="form-group">
+                    <label>Number:</label>
+                    <input class="form-control" type="number" ng-model="number" placeholder="number" blur>
+                    <error-message server-error="errors" field="emailform.newEmail" invalid-message="This should be a number"></error-message>
+                </div>
+            </form>
+        </div>
+        <div class="row"><a class="btn btn-danger" href="" ng-click="showErr">Show Errors</a></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="bower_components/ng-form-errors/src/index.js"></script>
+    <script src="bower_components/ng-form-errors/src/error/errorMessage.js"></script>
+    <script src="bower_components/ng-form-errors/src/blur/blur.js"></script>
+   <script src="main.js"></script>
+</body>
+</html>
