@@ -21,6 +21,10 @@
   }
 }
 
+.validationErrors{
+    display: none;
+}
+
 .validationErrors.in {
     animation: fadeInDown 0.5s;
     display:inline-block;
