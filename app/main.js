@@ -13,8 +13,8 @@ angular.module('validationErrorsDemo',[
                   "can't be blank",
                   "is null"
             ],
-            "password": [
-                  "can't be blank"
+            "size": [
+                  "Should be a number"
             ]
         }
     };
