@@ -1,0 +1,14 @@
+
+<p ng-repeat="(key, value) in field.$error" class="messageError" ng-class="{in: field.$showErr}">
+    <span class="fa fa-info-circle"></span>
+
+    {{ getErrMsg(key) }}
+</p>
+
+
+<p class="messageError" ng-repeat="message in serverError.messages[field.$name]" ng-class="{
+	in: field.$showErr && serverError.messages[field.$name]}">
+
+    <span class="fa fa-info-circle"></span>
+    {{message | translate }}
+</p>
