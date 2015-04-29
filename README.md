@@ -64,8 +64,8 @@ In this example error.tpl.html looks like that:
 You can use a custom template just configuring in you module's config section:
 
 ```javascript
-.config(function(validationErrorsProvider){
-    validationErrorsProvider.template = 'error.tpl.html';
+.config(function(ngFormErrorsProvider){
+    ngFormErrorsProvider.template = 'error.tpl.html';
 })
 ```
 
