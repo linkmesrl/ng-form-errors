@@ -3,7 +3,7 @@
 angular.module('ngFormErrors', [])
 .provider('ngFormErrors', function() {
 
-    this.template = '';
+    this.template = null;
 
     var _this = this;
 
