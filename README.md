@@ -4,7 +4,7 @@ Easy form validation is a combination of two directives.
 * The directive blur adds a class 'invalid' when the element is invalid or you try to submit the form with an invalid element 
 * The directive error-message adds a custom message in order to give a custom feedback to the user
 
-##HOw to use it
+##How to use it
 Import on your file html the following files:
 * src/blur/blur.css
 * src/blur/blur.js
