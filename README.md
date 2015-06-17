@@ -5,6 +5,8 @@ Easy form validation is a combination of two directives.
 * The directive blur adds a class 'invalid' when the element is invalid or you try to submit the form with an invalid element 
 * The directive error-message adds a custom message in order to give a realtime feedback to the user and show eventual errors from the server
 
+A **demo** is available [here](http://linkmesrl.github.io/ng-form-errors/)
+
 ##How to use it
 Import on your file html the following files:
 * src/blur/blur.css
