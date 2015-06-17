@@ -5,8 +5,8 @@
     <title>validationErrorsDemo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../src/blur/blur.css">
-    <link rel="stylesheet" href="../src/error/error.css">
+    <link rel="stylesheet" href="src/blur/blur.css">
+    <link rel="stylesheet" href="src/error/error.css">
 </head>
 <body data-ng-app="validationErrorsDemo">
 
@@ -20,7 +20,7 @@
             <form name="sampleForm">
                 <h2>Required Field</h2>
                 <pre class="prettyprint">
-                
+
     &lt;error-message server-error="errors" field="sampleForm.email">&lt;/error-message>
                 </pre>
                 <div class="form-group">
@@ -30,7 +30,7 @@
                 </div>
                 <h2>Required Field with Custom Invalid message</h2>
                 <pre class="prettyprint">
-                
+
     &lt;error-message server-error="errors" field="sampleForm.email" invalid-message="Incorrect Email">&lt;/error-message>
                 </pre>
                 <div class="form-group">
@@ -40,7 +40,7 @@
                 </div>
                 <h2>Unrequired Field</h2>
                 <pre class="prettyprint">
-                
+
     &lt;error-message server-error="errors" field="sampleForm.size2">&lt;/error-message>
                 </pre>
                 <div class="form-group">
@@ -50,7 +50,7 @@
                 </div>
                 <h2>Unrequired Field with Custom Invalid message</h2>
                 <pre class="prettyprint">
-                
+
     &lt;error-message server-error="errors" field="sampleForm.size" invalid-message="This should be a number">&lt;/error-message>
                 </pre>
                 <div class="form-group">
@@ -68,10 +68,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <script src="../src/index.js"></script>
-    <script src="../src/error/errorMessageTemplate.js"></script>
-    <script src="../src/error/errorMessage.js"></script>
-    <script src="../src/blur/blur.js"></script>
+    <script src="src/index.js"></script>
+    <script src="src/error/errorMessageTemplate.js"></script>
+    <script src="src/error/errorMessage.js"></script>
+    <script src="src/blur/blur.js"></script>
    <script src="main.js"></script>
 </body>
 </html>

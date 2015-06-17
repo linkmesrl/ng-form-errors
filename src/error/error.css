@@ -1,0 +1,47 @@
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.validationErrors{
+    display: none;
+}
+
+.validationErrors.in {
+    animation: fadeInDown 0.5s;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.validationErrors.out {
+    animation: fadeOutDown 0.5s;
+    display:none;
+}
+
+.validationErrors.fa, span.fa {
+    font-size:24px;
+    line-height:48px;
+    border:none;
+    margin:0 10px;
+    color:inherit;
+    vertical-align:sub;
+}

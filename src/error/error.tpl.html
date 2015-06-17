@@ -1,0 +1,18 @@
+<p class="validationErrors alert alert-danger" ng-class="{in: field.$showErr}" ng-show="invalidMessage">
+    <span class="fa fa-info-circle"></span>
+
+    {{ invalidMessage }}
+</p>
+
+<p class="validationErrors alert alert-danger" ng-repeat="(key, value) in field.$error" ng-class="{in: field.$showErr}" ng-show="!invalidMessage &&!serverError">
+    <span class="fa fa-info-circle"></span>
+
+    {{ getErrMsg(key) }}
+</p>
+
+<p class="alert alert-danger validationErrors" ng-repeat="message in serverError.messages[field.$name]" ng-class="{
+    in: field.$showErr && serverError.messages[field.$name]}" ng-show="!invalidMessage">
+
+    <span class="fa fa-info-circle"></span>
+    {{message}}
+</p>
