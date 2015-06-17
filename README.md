@@ -24,13 +24,13 @@ angular.module('app',[
 
 Then just append the `blur` directive to an input field, this is really important because will also the trigger the `error-message` directive.
 
-```
+```html
 <input class="form-control" name="email" type="email" ng-model="email" placeholder="email" blur>
 ```
 
 ##Example
 
-```         
+```html   
 <form name="sampleForm">
     <div class="form-group">
         <label>Email:</label>
@@ -52,7 +52,7 @@ As you can see we have added the directive blur to the input field and a error-m
 
 The base `error.tpl.html` is:
 
-```
+```html
 <p class="validationErrors alert alert-danger" ng-class="{in: field.$showErr}" ng-show="invalidMessage">
     <span class="fa fa-info-circle"></span>
 
