@@ -15,7 +15,7 @@
 
 
 
-angular.module('validationErrors')
+angular.module('ngFormErrors')
 .directive('blur', function() {
 
     var INVALID_CLASS   = 'invalid';

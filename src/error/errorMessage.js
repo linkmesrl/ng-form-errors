@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('ngFormErrors')
-.directive('errorMessage', function(ngFormErrors) {
+.directive('errorMessage', function(validationErrors) {
 
 
         return {
             restrict: 'E',
-            templateUrl: ngFormErrors.template || 'error.tpl.html',
+            templateUrl: validationErrors.template || 'error.tpl.html',
             scope: {
                 field:'=field',
                 invalidMessage:'@invalidMessage',
@@ -16,27 +16,14 @@ angular.module('ngFormErrors')
 
             link: function postLink(scope) {
 
-                var defaultMsg = 'Campo non valido';
-
-                //TODO mettere in inglese?
-
-
-                var errorMessages = {
-
-                    required : 'Campo obbligatorio',
-                    pattern : 'Formato non valido',
-                    number : 'Inserire un numero',
-                    email : 'Formato email non valido',
-                };
-
                 if(scope.errorMsgs){
 
-                    angular.extend(errorMessages, scope.errorMsgs);
+                    angular.extend(validationErrors.errorMessages, scope.errorMsgs);
                 }
 
                 scope.getErrMsg = function(errType){
 
-                   return errorMessages[errType] || defaultMsg;
+                   return validationErrors.errorMessages[errType] || validationErrors.errorMessages.default;
                 };
 
                 if(scope.field)

@@ -27,7 +27,9 @@
 
 .validationErrors.in {
     animation: fadeInDown 0.5s;
-    display:inline-block;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .validationErrors.out {
