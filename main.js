@@ -3,9 +3,6 @@
 angular.module('validationErrorsDemo',[
     'ngFormErrors'
 ])
-.config(function(ngFormErrorsProvider){
-    ngFormErrorsProvider.template = 'error.tpl.html';
-})
 .controller('FormCtrl', function($scope){
     var sampleErrors = {
         "messages": {
@@ -13,8 +10,15 @@ angular.module('validationErrorsDemo',[
                   "can't be blank",
                   "is null"
             ],
+            "email2": [
+                  "is null"
+            ],
             "size": [
                   "Should be a number"
+            ],
+            "size2": [
+                  "Should be a number",
+                  "Should be greater than X"
             ]
         }
     };

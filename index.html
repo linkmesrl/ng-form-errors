@@ -4,37 +4,74 @@
     <meta charset="UTF-8">
     <title>validationErrorsDemo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/ng-form-errors/src/blur/blur.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../src/blur/blur.css">
+    <link rel="stylesheet" href="../src/error/error.css">
 </head>
 <body data-ng-app="validationErrorsDemo">
 
-    <div class="container">
+    <div class="container" ng-controller="FormCtrl">
         <div class="row">
             <div class="col-xs-12 text-center">
                 <h1>Validation errors!</h1>
             </div>
         </div>
         <div class="row">
-            <form>
+            <form name="sampleForm">
+                <h2>Required Field</h2>
+                <pre class="prettyprint">
+                
+    &lt;error-message server-error="errors" field="sampleForm.email">&lt;/error-message>
+                </pre>
                 <div class="form-group">
                     <label>Email:</label>
-                    <input class="form-control" type="email" ng-model="email" placeholder="email" blur>
-                    <error-message server-error="errors" field="emailform.newEmail" invalid-message="mail non corretta"></error-message> 
+                    <input class="form-control" name="email2" type="email" ng-model="email2" placeholder="email" blur required>
+                    <error-message server-error="errors" field="sampleForm.email2"></error-message> 
                 </div>
+                <h2>Required Field with Custom Invalid message</h2>
+                <pre class="prettyprint">
+                
+    &lt;error-message server-error="errors" field="sampleForm.email" invalid-message="Incorrect Email">&lt;/error-message>
+                </pre>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input class="form-control" name="email" type="email" ng-model="email" placeholder="email" blur required>
+                    <error-message server-error="errors" field="sampleForm.email" invalid-message="Incorrect Email"></error-message> 
+                </div>
+                <h2>Unrequired Field</h2>
+                <pre class="prettyprint">
+                
+    &lt;error-message server-error="errors" field="sampleForm.size2">&lt;/error-message>
+                </pre>
                 <div class="form-group">
                     <label>Number:</label>
-                    <input class="form-control" type="number" ng-model="number" placeholder="number" blur>
-                    <error-message server-error="errors" field="emailform.newEmail" invalid-message="This should be a number"></error-message>
+                    <input class="form-control" name="size2" type="number" ng-model="size2" placeholder="number" blur>
+                    <error-message server-error="errors" field="sampleForm.size2"></error-message>
+                </div>
+                <h2>Unrequired Field with Custom Invalid message</h2>
+                <pre class="prettyprint">
+                
+    &lt;error-message server-error="errors" field="sampleForm.size" invalid-message="This should be a number">&lt;/error-message>
+                </pre>
+                <div class="form-group">
+                    <label>Number:</label>
+                    <input class="form-control" name="size" type="number" ng-model="size" placeholder="number" blur>
+                    <error-message server-error="errors" field="sampleForm.size" invalid-message="This is a custom message"></error-message>
                 </div>
             </form>
         </div>
-        <div class="row"><a class="btn btn-danger" href="" ng-click="showErr">Show Errors</a></div>
+        <div class="row" style="margin-bottom: 50px;">
+            <a class="btn btn-danger" href="" ng-click="showErr()">Show Server Errors</a>
+            <a class="btn btn-success" href="" ng-click="clearErr()">Clear Server Errors</a>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    <script src="bower_components/ng-form-errors/src/index.js"></script>
-    <script src="bower_components/ng-form-errors/src/error/errorMessage.js"></script>
-    <script src="bower_components/ng-form-errors/src/blur/blur.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="../src/index.js"></script>
+    <script src="../src/error/errorMessageTemplate.js"></script>
+    <script src="../src/error/errorMessage.js"></script>
+    <script src="../src/blur/blur.js"></script>
    <script src="main.js"></script>
 </body>
 </html>
