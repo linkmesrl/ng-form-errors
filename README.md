@@ -90,11 +90,11 @@ You can use a custom template just configuring in you module's config section:
 
 You can define you custom messages to override the default:
 
-**defaultMsg** 'Invalid Field'
-**required** 'Mandatory Field',
-**pattern** 'Invalid Format',
-**number** 'This should be a number',
-**email** 'Invalid email address'
+- **defaultMsg** 'Invalid Field'
+- **required** 'Mandatory Field',
+- **pattern** 'Invalid Format',
+- **number** 'This should be a number',
+- **email** 'Invalid email address'
 
 ```javascript
 .config(function(validationErrorsProvider){
