@@ -20,8 +20,13 @@
             <form name="sampleForm">
                 <div class="form-group">
                     <label>Email:</label>
-                    <input class="form-control" name="email" type="email" ng-model="email" placeholder="email" blur>
-                    <error-message server-error="errors" field="sampleForm.email" invalid-message="mail non corretta"></error-message> 
+                    <input class="form-control" name="email" type="email" ng-model="email" placeholder="email" blur required>
+                    <error-message server-error="errors" field="sampleForm.email" invalid-message="Incorrect Email"></error-message> 
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input class="form-control" name="email2" type="email" ng-model="email2" placeholder="email" blur required>
+                    <error-message server-error="errors" field="sampleForm.email2"></error-message> 
                 </div>
                 <div class="form-group">
                     <label>Number:</label>
