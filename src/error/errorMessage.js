@@ -5,12 +5,12 @@ angular.module('ngFormErrors')
 
     return {
         restrict: 'E',
-        templateUrl: ngFormErrors.template || 'error.tpl.html',
+        templateUrl: validationErrors.template || 'error.tpl.html',
         scope: {
             field: '=field',
             invalidMessage: '@invalidMessage',
             errorMsgs: '=errorMsgs',
-            serverError: '=serverError',
+            serverError: '=serverError'
         },
 
         link: function postLink(scope) {
@@ -22,7 +22,7 @@ angular.module('ngFormErrors')
 
             scope.getErrMsg = function(errType){
 
-               return validationErrors.errorMessages[errType] || validationErrors.errorMessages.default;
+                return validationErrors.errorMessages[errType] || validationErrors.errorMessages.default;
             };
 
             if(scope.field)

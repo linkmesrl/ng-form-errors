@@ -81,13 +81,8 @@ The base `error.tpl.html` is:
 You can use a custom template just configuring in you module's config section:
 
 ```javascript
-<<<<<<< HEAD
-.config(function(ngFormErrorsProvider){
-    ngFormErrorsProvider.template = 'error.tpl.html';
-=======
 .config(function(validationErrorsProvider){
     validationErrorsProvider.template = 'myTemplate.html';
->>>>>>> develop
 })
 ```
 
