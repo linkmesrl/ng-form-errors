@@ -1,0 +1,56 @@
+{
+  "ecmaFeatures": {
+    "blockBindings": true,
+    "forOf" : true,
+    "generators": true,
+    "destructuring": true,
+    "forOf": true,
+    "arrowFunctions": true,
+    "templateStrings": true,
+    "destructuring": true,
+    "forOf": true,
+    "arrowFunctions": true,
+    "templateStrings": true,
+    "generators": true
+  },
+  "env" : {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules" : {
+    "quotes": [1, "single"],
+    "camelcase": false,
+    "templateStrings": true,
+    "no-underscore-dangle": false,
+    "eqeqeq": true,
+    "no-alert": true,
+    "key-spacing": [2, {
+        "beforeColon": false,
+        "afterColon": true
+    }],
+    "indent": 2,
+    "max-nested-callbacks": [3, 4]
+  },
+  "globals": {
+    "angular": false,
+    "console": false,
+    "require": false,
+    "inject": false,
+    "module": false,
+    "exports": false,
+    "describe": false,
+    "xdescribe": false,
+    "it": false,
+    "xit": false,
+    "before": false,
+    "beforeEach": false,
+    "after": false,
+    "afterEach": false,
+    "expect": false,
+    "element": false,
+    "by": false,
+    "browser": false,
+    "protractor": false
+  }
+}

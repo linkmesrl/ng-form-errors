@@ -1,53 +1,39 @@
 'use strict';
 
 angular.module('ngFormErrors')
-.directive('errorMessage', function(ngFormErrors) {
+.directive('errorMessage', function(validationErrors) {
 
+    return {
+        restrict: 'E',
+        templateUrl: ngFormErrors.template || 'error.tpl.html',
+        scope: {
+            field: '=field',
+            invalidMessage: '@invalidMessage',
+            errorMsgs: '=errorMsgs',
+            serverError: '=serverError',
+        },
 
-        return {
-            restrict: 'E',
-            templateUrl: ngFormErrors.template || 'error.tpl.html',
-            scope: {
-                field:'=field',
-                invalidMessage:'@invalidMessage',
-                errorMsgs: '=errorMsgs',
-                serverError:'=serverError',
-            },
+        link: function postLink(scope) {
 
-            link: function postLink(scope) {
+            if(scope.errorMsgs){
 
-                var defaultMsg = 'Campo non valido';
-
-                //TODO mettere in inglese?
-
-
-                var errorMessages = {
-
-                    required : 'Campo obbligatorio',
-                    pattern : 'Formato non valido',
-                    number : 'Inserire un numero',
-                    email : 'Formato email non valido',
-                };
-
-                if(scope.errorMsgs){
-
-                    angular.extend(errorMessages, scope.errorMsgs);
-                }
-
-                scope.getErrMsg = function(errType){
-
-                   return scope.invalidMessage || errorMessages[errType] || defaultMsg;
-                };
-
-                if(scope.field)
-                {
-                    scope.$watch('serverError.messages[field.$name]', function(value){
-                        if(value){
-                            scope.field.$showErr = true;
-                        }
-                    });
-                }
-
+                angular.extend(validationErrors.errorMessages, scope.errorMsgs);
             }
-        };
-    });
+
+            scope.getErrMsg = function(errType){
+
+               return validationErrors.errorMessages[errType] || validationErrors.errorMessages.default;
+            };
+
+            if(scope.field)
+            {
+                scope.$watch('serverError.messages[field.$name]', function(value){
+                    if(value){
+                        scope.field.$showErr = true;
+                    }
+                });
+            }
+
+        }
+    };
+});

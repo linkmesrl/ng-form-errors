@@ -3,13 +3,13 @@
 angular.module('ngFormErrors', [])
 .provider('validationErrors', function() {
 
-    this.template = null;
+    this.template = '';
 
     this.errorMessages = {
-        required: 'Mandatory Field',
-        pattern: 'Invalid Format',
-        number: 'This should be a number',
-        email: 'Invalid email address',
+        required : 'Mandatory Field',
+        pattern : 'Invalid Format',
+        number : 'This should be a number',
+        email : 'Invalid email address',
         default: 'Invalid Field'
     };
 
