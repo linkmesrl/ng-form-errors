@@ -7,6 +7,10 @@ Easy form validation is a combination of two directives.
 
 A **demo** is available [here](http://linkmesrl.github.io/ng-form-errors/)
 
+## Installation
+
+`bower install ngFormErrors --save`
+
 ##How to use it
 Import on your file html the following files:
 * src/blur/blur.css
