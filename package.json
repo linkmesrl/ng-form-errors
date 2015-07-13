@@ -1,6 +1,6 @@
 {
   "name": "ng-form-errors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easy form validation is a combination of two directives.",
   "main": "index.js",
   "scripts": {
